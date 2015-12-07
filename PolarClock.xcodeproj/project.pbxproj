@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		A02AEA5C1C1628340061006B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02AEA5B1C1628340061006B /* AppDelegate.swift */; };
 		A02AEA5E1C1628340061006B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02AEA5D1C1628340061006B /* ViewController.swift */; };
-		A02AEA611C1628340061006B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A02AEA5F1C1628340061006B /* Main.storyboard */; };
 		A02AEA631C1628340061006B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A02AEA621C1628340061006B /* Assets.xcassets */; };
 		A02AEA661C1628340061006B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A02AEA641C1628340061006B /* LaunchScreen.storyboard */; };
 		A02AEA711C1628340061006B /* PolarClockTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02AEA701C1628340061006B /* PolarClockTests.swift */; };
@@ -37,7 +36,6 @@
 		A02AEA581C1628340061006B /* PolarClock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PolarClock.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A02AEA5B1C1628340061006B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A02AEA5D1C1628340061006B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		A02AEA601C1628340061006B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A02AEA621C1628340061006B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A02AEA651C1628340061006B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A02AEA671C1628340061006B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -97,12 +95,11 @@
 		A02AEA5A1C1628340061006B /* PolarClock */ = {
 			isa = PBXGroup;
 			children = (
-				A02AEA5B1C1628340061006B /* AppDelegate.swift */,
-				A02AEA5D1C1628340061006B /* ViewController.swift */,
-				A02AEA5F1C1628340061006B /* Main.storyboard */,
-				A02AEA621C1628340061006B /* Assets.xcassets */,
-				A02AEA641C1628340061006B /* LaunchScreen.storyboard */,
-				A02AEA671C1628340061006B /* Info.plist */,
+				A02AEA8A1C1629A60061006B /* App */,
+				A02AEA8B1C1629AA0061006B /* Controller */,
+				A02AEA8D1C162A650061006B /* Model */,
+				A02AEA8C1C162A500061006B /* View */,
+				A02AEA891C1629980061006B /* Resources */,
 			);
 			path = PolarClock;
 			sourceTree = "<group>";
@@ -123,6 +120,46 @@
 				A02AEA7D1C1628340061006B /* Info.plist */,
 			);
 			path = PolarClockUITests;
+			sourceTree = "<group>";
+		};
+		A02AEA891C1629980061006B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				A02AEA671C1628340061006B /* Info.plist */,
+				A02AEA641C1628340061006B /* LaunchScreen.storyboard */,
+				A02AEA621C1628340061006B /* Assets.xcassets */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		A02AEA8A1C1629A60061006B /* App */ = {
+			isa = PBXGroup;
+			children = (
+				A02AEA5B1C1628340061006B /* AppDelegate.swift */,
+			);
+			name = App;
+			sourceTree = "<group>";
+		};
+		A02AEA8B1C1629AA0061006B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A02AEA5D1C1628340061006B /* ViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		A02AEA8C1C162A500061006B /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		A02AEA8D1C162A650061006B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -231,7 +268,6 @@
 			files = (
 				A02AEA661C1628340061006B /* LaunchScreen.storyboard in Resources */,
 				A02AEA631C1628340061006B /* Assets.xcassets in Resources */,
-				A02AEA611C1628340061006B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -293,14 +329,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		A02AEA5F1C1628340061006B /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A02AEA601C1628340061006B /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		A02AEA641C1628340061006B /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
