@@ -2,16 +2,15 @@ import UIKit
 
 class CircleSectorView: UIView {
 
-    private let depth: CGFloat
-    private let startAngle: CGFloat
-    private let endAngle: CGFloat
+    var depth = CGFloat(0)
+    var startAngle: CGFloat
+    var endAngle: CGFloat
 
     private lazy var segmentLayer = CAShapeLayer()
 
     override init(frame: CGRect) {
-        startAngle = -CGFloat(90).toRadians()
-        endAngle = CGFloat(135).toRadians()
-        depth = CGFloat(10)
+        startAngle = CGFloat(0)
+        endAngle = CGFloat(135)
         super.init(frame: frame)
         segmentLayer.fillColor = UIColor.redColor().CGColor
         layer.addSublayer(segmentLayer)
@@ -23,11 +22,22 @@ class CircleSectorView: UIView {
 
     override func layoutSubviews() {
         super.layoutSubviews()
+        updatePath()
+    }
+}
 
-        let radius = (frame.width / 2) - depth/2
-        let arc = UIBezierPath(arcCenter: bounds.center, radius: radius, startAngle: startAngle, endAngle: endAngle, clockwise: true)
-        let strokedArc = CGPathCreateCopyByStrokingPath(arc.CGPath, nil, depth, .Butt, .Miter, 10)
+private extension CircleSectorView {
 
-        segmentLayer.path = strokedArc
+    func makePath() -> CGPath? {
+        let radius = (bounds.width / 2) - (depth / 2)
+        let startAngleRadians = (startAngle - 90).toRadians()
+        let endAngleRadians = (endAngle - 90).toRadians()
+        let arc = UIBezierPath(arcCenter: bounds.center, radius: radius,
+            startAngle: startAngleRadians, endAngle: endAngleRadians, clockwise: true)
+        return CGPathCreateCopyByStrokingPath(arc.CGPath, nil, depth, .Butt, .Miter, 10)
+    }
+
+    func updatePath() {
+        segmentLayer.path = makePath()
     }
 }

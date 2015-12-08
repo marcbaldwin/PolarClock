@@ -1,0 +1,16 @@
+PODS:
+  - AutoLayoutBuilder (2.0.0)
+  - GestureRecognizerClosures (2.0.0)
+  - Nimble (3.0.0)
+
+DEPENDENCIES:
+  - AutoLayoutBuilder
+  - GestureRecognizerClosures
+  - Nimble (= 3.0.0)
+
+SPEC CHECKSUMS:
+  AutoLayoutBuilder: 804386e9c2615f244551a6839b8d0aa68ca46f62
+  GestureRecognizerClosures: b4f906a027ad39fb46f8e31e167a51ddb79d8110
+  Nimble: 4c353d43735b38b545cbb4cb91504588eb5de926
+
+COCOAPODS: 0.39.0
