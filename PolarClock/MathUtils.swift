@@ -27,6 +27,17 @@ extension Double {
     }
 }
 
+struct CGCircle {
+    let center: CGPoint
+    let radius: CGFloat
+
+    func pointAtAngle(angle: CGFloat) -> CGPoint {
+        let x = center.x + radius * cos(angle)
+        let y = center.y + radius * sin(angle)
+        return CGPoint(x: x, y: y)
+    }
+}
+
 extension CGFloat {
 
     static func π() -> CGFloat {

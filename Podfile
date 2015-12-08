@@ -6,6 +6,7 @@ def testing_pods
 end
 
 target 'PolarClock' do
+  pod "AsyncSwift"
   pod 'AutoLayoutBuilder'
   pod 'GestureRecognizerClosures'
 end

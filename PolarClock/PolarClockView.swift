@@ -2,36 +2,35 @@ import UIKit
 import AutoLayoutBuilder
 
 protocol PolarClockViewDataSource {
-    func pathCount() -> Int
+    func sectorCount() -> Int
 }
 
 class PolarClockView: ConstraintBasedView {
 
     var dataSource: PolarClockViewDataSource!
-    private var circleCount: Int { return dataSource.pathCount() }
-
-    private var paths = [CircleSectorView]()
+    private var sectorCount: Int { return dataSource.sectorCount() }
+    private var sectors = [RingSectorView]()
 
     override func initView() {
-        for _ in 0 ..< circleCount {
-            paths.append(CircleSectorView())
+        for _ in 0 ..< sectorCount {
+            sectors.append(RingSectorView())
         }
         super.initView()
     }
 
     override func initialSubviews() -> [UIView] {
-        return paths
+        return sectors
     }
 
     override func initConstraints() {
         let layout = Layout()
 
-        for (index, circleSectorView) in paths.enumerate() {
-            layout += circleSectorView[.Width] == self[.Width] * (CGFloat(index+2) / CGFloat(circleCount+1))
+        for (index, circleSectorView) in sectors.enumerate() {
+            layout += circleSectorView[.Width] == self[.Width] * (CGFloat(index+2) / CGFloat(sectorCount+1))
             layout += circleSectorView[.AspectRatio] == 1
         }
 
-        layout += Group(paths)[.Center] == self[.Center]
+        layout += Group(sectors)[.Center] == self[.Center]
 
         layout.activateConstraints(true)
     }
@@ -40,9 +39,16 @@ class PolarClockView: ConstraintBasedView {
 
     override func layoutSubviews() {
         super.layoutSubviews()
-        let depth = (bounds.width / 2) / CGFloat(circleCount + 1)
-        for circleSectorView in paths {
+        let depth = (bounds.width / 2) / CGFloat(sectorCount + 1)
+        for circleSectorView in sectors {
             circleSectorView.depth = depth - 5
         }
+    }
+}
+
+extension PolarClockView {
+
+    func animateRingAtIndex(index: Int, startAngle: CGFloat, endAngle: CGFloat, duration: Double) {
+        sectors[index].animateEndAngle(endAngle, withDuration: duration)
     }
 }
