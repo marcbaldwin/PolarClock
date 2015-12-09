@@ -20,6 +20,7 @@ class RingSectorView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         backgroundColor = .clearColor()
+        segmentLayer.opacity = 0
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -30,21 +31,10 @@ class RingSectorView: UIView {
         return RingSectorLayer.self
     }
 
-    func animateEndAngle(endAngle: CGFloat, withDuration duration: Double) {
-
-        CATransaction.begin()
-        CATransaction.setAnimationTimingFunction(CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut))
-        CATransaction.setCompletionBlock { () -> Void in
-            self.endAngle = endAngle
-        }
-
+    func animateEndAngle(endAngle: CGFloat) -> CAAnimation {
         let animation = CABasicAnimation(keyPath: "endAngle")
         animation.fromValue = segmentLayer.endAngle
         animation.toValue = endAngle
-        animation.duration = duration
-        animation.fillMode = kCAFillModeForwards
-        segmentLayer.addAnimation(animation, forKey: "endAngle")
-
-        CATransaction.commit()
+        return animation
     }
 }

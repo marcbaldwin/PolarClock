@@ -53,7 +53,7 @@ class PolarClockView: ConstraintBasedView {
 
 extension PolarClockView {
 
-    func animateRingAtIndex(index: Int, endAngle: CGFloat, duration: Double) {
-        sectors[index].animateEndAngle(endAngle, withDuration: duration)
+    func ringAtIndex(index: Int) -> RingSectorView {
+        return sectors[index]
     }
 }

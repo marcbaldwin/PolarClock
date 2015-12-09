@@ -40,9 +40,34 @@ private extension ViewController {
 
         for index in 0 ..< sectorCount() {
             Async.main(after: maxDuration * 0.3 * Double(index)) {
+                let ringSectorView = self.polarClockView.ringAtIndex(index)
                 let targetEndAngle = CGFloat(Int.random(0...360))
-                self.polarClockView.animateRingAtIndex(index, endAngle: targetEndAngle, duration: self.maxDuration)
-                
+
+                let endAngleAnimation = ringSectorView.animateEndAngle(targetEndAngle)
+                endAngleAnimation.duration = self.maxDuration
+                endAngleAnimation.fillMode = kCAFillModeForwards
+
+                let fadeInAnimation = CABasicAnimation(keyPath: "opacity")
+                fadeInAnimation.fromValue = 0
+                fadeInAnimation.toValue = 1
+                fadeInAnimation.duration = self.maxDuration
+                fadeInAnimation.fillMode = kCAFillModeForwards
+
+                let animationGroup = CAAnimationGroup()
+                animationGroup.animations = [endAngleAnimation, fadeInAnimation]
+                animationGroup.duration = self.maxDuration
+                animationGroup.fillMode = kCAFillModeForwards
+                animationGroup.removedOnCompletion = false
+
+                CATransaction.begin()
+                CATransaction.setAnimationTimingFunction(CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut))
+                CATransaction.setCompletionBlock { () -> Void in
+                    ringSectorView.endAngle = targetEndAngle
+                    ringSectorView.layer.opacity = 1
+                }
+
+                ringSectorView.layer.addAnimation(animationGroup, forKey: "initialAnimation")
+                CATransaction.commit()
             }
         }
     }
