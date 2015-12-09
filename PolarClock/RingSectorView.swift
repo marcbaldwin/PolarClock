@@ -15,34 +15,36 @@ class RingSectorView: UIView {
         set { segmentLayer.endAngle = newValue }
     }
 
-    private lazy var segmentLayer = RingSectorLayer()
+    private var segmentLayer: RingSectorLayer { return layer as! RingSectorLayer }
 
     override init(frame: CGRect) {
         super.init(frame: frame)
-        layer.addSublayer(segmentLayer)
+        backgroundColor = .clearColor()
     }
 
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        segmentLayer.frame = bounds
+    override class func layerClass() -> AnyClass {
+        return RingSectorLayer.self
     }
 
     func animateEndAngle(endAngle: CGFloat, withDuration duration: Double) {
 
+        CATransaction.begin()
+        CATransaction.setAnimationTimingFunction(CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut))
+        CATransaction.setCompletionBlock { () -> Void in
+            self.endAngle = endAngle
+        }
+
         let animation = CABasicAnimation(keyPath: "endAngle")
-        animation.fromValue = self.segmentLayer.endAngle
+        animation.fromValue = segmentLayer.endAngle
         animation.toValue = endAngle
         animation.duration = duration
-        self.segmentLayer.addAnimation(animation, forKey: "endAngle")
+        animation.fillMode = kCAFillModeForwards
+        segmentLayer.addAnimation(animation, forKey: "endAngle")
 
-        CATransaction.begin()
-        CATransaction.setCompletionBlock { () -> Void in
-            self.segmentLayer.endAngle = endAngle
-        }
         CATransaction.commit()
     }
 }

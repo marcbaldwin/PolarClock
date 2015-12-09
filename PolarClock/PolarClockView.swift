@@ -8,8 +8,11 @@ protocol PolarClockViewDataSource {
 class PolarClockView: ConstraintBasedView {
 
     var dataSource: PolarClockViewDataSource!
+
     private var sectorCount: Int { return dataSource.sectorCount() }
     private var sectors = [RingSectorView]()
+
+    // MARK: Override
 
     override func initView() {
         for _ in 0 ..< sectorCount {
@@ -35,7 +38,9 @@ class PolarClockView: ConstraintBasedView {
         layout.activateConstraints(true)
     }
 
-    override func initViewInInit() -> Bool { return false }
+    override func initViewInInit() -> Bool {
+        return false
+    }
 
     override func layoutSubviews() {
         super.layoutSubviews()
@@ -48,7 +53,7 @@ class PolarClockView: ConstraintBasedView {
 
 extension PolarClockView {
 
-    func animateRingAtIndex(index: Int, startAngle: CGFloat, endAngle: CGFloat, duration: Double) {
+    func animateRingAtIndex(index: Int, endAngle: CGFloat, duration: Double) {
         sectors[index].animateEndAngle(endAngle, withDuration: duration)
     }
 }

@@ -5,6 +5,7 @@ import Async
 class ViewController: UIViewController {
 
     lazy var polarClockView = PolarClockView()
+    private let maxDuration: Double = 0.75
 
     override func loadView() {
         view = UIView()
@@ -22,16 +23,7 @@ class ViewController: UIViewController {
     }
 
     override func viewDidAppear(animated: Bool) {
-        let duration = 1.0
-        for i in 0 ..< sectorCount() {
-            Async.main(after:duration * Double(i)) {
-                self.polarClockView.animateRingAtIndex(i, startAngle: 0, endAngle: CGFloat(35*(i+1)), duration: duration)
-            }
-        }
-
-        Async.main(after: 8) {
-            self.polarClockView.animateRingAtIndex(0, startAngle: 0, endAngle: 100, duration: 1)
-        }
+        doInitialAnimation()
     }
 }
 
@@ -39,5 +31,19 @@ extension ViewController: PolarClockViewDataSource {
 
     func sectorCount() -> Int {
         return 5
+    }
+}
+
+private extension ViewController {
+
+    func doInitialAnimation() {
+
+        for index in 0 ..< sectorCount() {
+            Async.main(after: maxDuration * 0.3 * Double(index)) {
+                let targetEndAngle = CGFloat(Int.random(0...360))
+                self.polarClockView.animateRingAtIndex(index, endAngle: targetEndAngle, duration: self.maxDuration)
+                
+            }
+        }
     }
 }

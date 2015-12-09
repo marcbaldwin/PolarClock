@@ -2,36 +2,27 @@ import UIKit
 
 class RingSectorLayer: CALayer {
 
-    @NSManaged var startAngle: CGFloat
-    @NSManaged var endAngle: CGFloat
-    @NSManaged var depth: CGFloat
+    dynamic var startAngle = CGFloat(0)
+    dynamic var endAngle = CGFloat(0)
+    dynamic var depth = CGFloat(0)
+
+    // MARK: Init
 
     override init() {
         super.init()
-        startAngle = 0
-        endAngle = 0
-        depth = 0
     }
 
     override init(layer: AnyObject) {
-        super.init(layer: layer)
         if let ringSectorLayer = layer as? RingSectorLayer {
             startAngle = ringSectorLayer.startAngle
             endAngle = ringSectorLayer.endAngle
             depth = ringSectorLayer.depth
-        } else {
-            startAngle = 0
-            endAngle = 0
-            depth = 0
         }
+        super.init(layer: layer)
     }
 
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
-    }
-
-    override class func needsDisplayForKey(key: String) -> Bool {
-        return isKeyAnimateable(key) || super.needsDisplayForKey(key)
     }
 
     override func drawInContext(ctx: CGContext) {
@@ -58,11 +49,15 @@ class RingSectorLayer: CALayer {
         CGContextSetFillColorWithColor(ctx, UIColor.redColor().CGColor)
         CGContextDrawPath(ctx, .Fill)
     }
+
+    override class func needsDisplayForKey(key: String) -> Bool {
+        return isCustomDisplayableProperty(key) || super.needsDisplayForKey(key)
+    }
 }
 
 private extension RingSectorLayer {
 
-    class func isKeyAnimateable(key: String) -> Bool {
+    class func isCustomDisplayableProperty(key: String) -> Bool {
         return key == "startAngle" || key == "endAngle" || key == "depth"
     }
 }
