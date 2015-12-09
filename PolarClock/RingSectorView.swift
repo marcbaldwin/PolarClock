@@ -17,6 +17,12 @@ class RingSectorView: UIView {
 
     private var segmentLayer: RingSectorLayer { return layer as! RingSectorLayer }
 
+    convenience init(color: UIColor) {
+        self.init(frame: CGRectZero)
+        segmentLayer.color = color
+        segmentLayer.contentsScale = UIScreen.mainScreen().scale
+    }
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         backgroundColor = .clearColor()

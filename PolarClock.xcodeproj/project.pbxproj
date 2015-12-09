@@ -21,6 +21,7 @@
 		A02AEA981C163CC10061006B /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02AEA971C163CC10061006B /* UIViewExtensions.swift */; };
 		A02AEA9A1C163CD00061006B /* UIColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02AEA991C163CD00061006B /* UIColorExtensions.swift */; };
 		A02AEA9C1C1788820061006B /* RingSectorLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02AEA9B1C1788820061006B /* RingSectorLayer.swift */; };
+		A02AEAA11C18E9300061006B /* Palette.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02AEAA01C18E9300061006B /* Palette.swift */; };
 		CB1A005B960AABAE5CF38A3C /* Pods_PolarClock.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1932295BDB7CE7C49F6C3E1C /* Pods_PolarClock.framework */; };
 /* End PBXBuildFile section */
 
@@ -66,6 +67,7 @@
 		A02AEA971C163CC10061006B /* UIViewExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
 		A02AEA991C163CD00061006B /* UIColorExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtensions.swift; sourceTree = "<group>"; };
 		A02AEA9B1C1788820061006B /* RingSectorLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RingSectorLayer.swift; sourceTree = "<group>"; };
+		A02AEAA01C18E9300061006B /* Palette.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Palette.swift; sourceTree = "<group>"; };
 		C5D6CC4D56D10D522A1513C4 /* Pods-PolarClock.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PolarClock.release.xcconfig"; path = "Pods/Target Support Files/Pods-PolarClock/Pods-PolarClock.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -134,6 +136,7 @@
 				A02AEA8B1C1629AA0061006B /* Controller */,
 				A02AEA8D1C162A650061006B /* Model */,
 				A02AEA8C1C162A500061006B /* View */,
+				A02AEA9F1C18E91D0061006B /* View.Resources */,
 				A02AEA901C1637800061006B /* Extensions */,
 				A02AEA891C1629980061006B /* Resources */,
 			);
@@ -210,6 +213,14 @@
 				A02AEA971C163CC10061006B /* UIViewExtensions.swift */,
 			);
 			name = Extensions;
+			sourceTree = "<group>";
+		};
+		A02AEA9F1C18E91D0061006B /* View.Resources */ = {
+			isa = PBXGroup;
+			children = (
+				A02AEAA01C18E9300061006B /* Palette.swift */,
+			);
+			name = View.Resources;
 			sourceTree = "<group>";
 		};
 		D5DA5AF320532A120216EC81 /* Pods */ = {
@@ -459,6 +470,7 @@
 				A02AEA921C1637960061006B /* MathUtils.swift in Sources */,
 				A02AEA5C1C1628340061006B /* AppDelegate.swift in Sources */,
 				A02AEA941C1639D80061006B /* PolarClockView.swift in Sources */,
+				A02AEAA11C18E9300061006B /* Palette.swift in Sources */,
 				A02AEA8F1C162BA10061006B /* RingSectorView.swift in Sources */,
 				A02AEA9A1C163CD00061006B /* UIColorExtensions.swift in Sources */,
 			);

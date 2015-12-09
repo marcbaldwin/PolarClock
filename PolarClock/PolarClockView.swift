@@ -3,6 +3,7 @@ import AutoLayoutBuilder
 
 protocol PolarClockViewDataSource {
     func sectorCount() -> Int
+    func viewAtIndex(index: Int) -> RingSectorView
 }
 
 class PolarClockView: ConstraintBasedView {
@@ -15,8 +16,8 @@ class PolarClockView: ConstraintBasedView {
     // MARK: Override
 
     override func initView() {
-        for _ in 0 ..< sectorCount {
-            sectors.append(RingSectorView())
+        for index in 0 ..< sectorCount {
+            sectors.append(dataSource.viewAtIndex(index))
         }
         super.initView()
     }

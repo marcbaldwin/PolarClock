@@ -5,6 +5,7 @@ class RingSectorLayer: CALayer {
     dynamic var startAngle = CGFloat(0)
     dynamic var endAngle = CGFloat(0)
     dynamic var depth = CGFloat(0)
+    var color = UIColor.blackColor()
 
     // MARK: Init
 
@@ -13,11 +14,11 @@ class RingSectorLayer: CALayer {
     }
 
     override init(layer: AnyObject) {
-        if let ringSectorLayer = layer as? RingSectorLayer {
-            startAngle = ringSectorLayer.startAngle
-            endAngle = ringSectorLayer.endAngle
-            depth = ringSectorLayer.depth
-        }
+        guard let ringSectorLayer = layer as? RingSectorLayer else { fatalError() }
+        startAngle = ringSectorLayer.startAngle
+        endAngle = ringSectorLayer.endAngle
+        depth = ringSectorLayer.depth
+        color = ringSectorLayer.color
         super.init(layer: layer)
     }
 
@@ -46,7 +47,7 @@ class RingSectorLayer: CALayer {
         CGContextAddArc(ctx, center.x, center.y, innerRadius, adjustedEndAngle, adjustedStartAngle, 1)
         CGContextClosePath(ctx)
 
-        CGContextSetFillColorWithColor(ctx, UIColor.redColor().CGColor)
+        CGContextSetFillColorWithColor(ctx, color.CGColor)
         CGContextDrawPath(ctx, .Fill)
     }
 

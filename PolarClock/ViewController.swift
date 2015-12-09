@@ -6,10 +6,11 @@ class ViewController: UIViewController {
 
     lazy var polarClockView = PolarClockView()
     private let maxDuration: Double = 0.75
+    let colors = [UIColor.softYellowGreen(), UIColor.softRed(), UIColor.softMagneta(), UIColor.limeGreen(), UIColor.softCyan()]
 
     override func loadView() {
         view = UIView()
-        view.backgroundColor = .whiteColor()
+        view.backgroundColor = .background()
         polarClockView.dataSource = self
         polarClockView.initView()
         polarClockView.translatesAutoresizingMaskIntoConstraints = false
@@ -30,7 +31,11 @@ class ViewController: UIViewController {
 extension ViewController: PolarClockViewDataSource {
 
     func sectorCount() -> Int {
-        return 5
+        return colors.count
+    }
+
+    func viewAtIndex(index: Int) -> RingSectorView {
+        return RingSectorView(color: colors[index])
     }
 }
 
