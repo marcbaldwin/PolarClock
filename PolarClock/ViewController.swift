@@ -18,7 +18,14 @@ class ViewController: UIViewController {
 
         let layout = Layout()
         layout += polarClockView[.Center] == view[.Center]
-        layout += polarClockView[.Width] == view[.Width] - 40
+        layout += polarClockView[.Width] <= view[.Width] - 40
+        layout += polarClockView[.Height] <= view[.Height] - 40
+        let widthConstraints = polarClockView[.Width] == view[.Width]
+        let heightConstraints = polarClockView[.Height] == view[.Height]
+        widthConstraints.forEach { $0.priority = 750 }
+        heightConstraints.forEach { $0.priority = 750 }
+        layout += widthConstraints
+        layout += heightConstraints
         layout += polarClockView[.AspectRatio] == 1
         layout.activateConstraints(true)
     }
