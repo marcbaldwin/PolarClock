@@ -22,6 +22,7 @@
 		A02AEA9A1C163CD00061006B /* UIColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02AEA991C163CD00061006B /* UIColorExtensions.swift */; };
 		A02AEA9C1C1788820061006B /* RingSectorLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02AEA9B1C1788820061006B /* RingSectorLayer.swift */; };
 		A02AEAA11C18E9300061006B /* Palette.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02AEAA01C18E9300061006B /* Palette.swift */; };
+		A02AEAA51C1A40A80061006B /* Clock.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02AEAA41C1A40A80061006B /* Clock.swift */; };
 		CB1A005B960AABAE5CF38A3C /* Pods_PolarClock.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1932295BDB7CE7C49F6C3E1C /* Pods_PolarClock.framework */; };
 /* End PBXBuildFile section */
 
@@ -68,6 +69,7 @@
 		A02AEA991C163CD00061006B /* UIColorExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtensions.swift; sourceTree = "<group>"; };
 		A02AEA9B1C1788820061006B /* RingSectorLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RingSectorLayer.swift; sourceTree = "<group>"; };
 		A02AEAA01C18E9300061006B /* Palette.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Palette.swift; sourceTree = "<group>"; };
+		A02AEAA41C1A40A80061006B /* Clock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Clock.swift; sourceTree = "<group>"; };
 		C5D6CC4D56D10D522A1513C4 /* Pods-PolarClock.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PolarClock.release.xcconfig"; path = "Pods/Target Support Files/Pods-PolarClock/Pods-PolarClock.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -200,6 +202,7 @@
 		A02AEA8D1C162A650061006B /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				A02AEAA41C1A40A80061006B /* Clock.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -473,6 +476,7 @@
 				A02AEAA11C18E9300061006B /* Palette.swift in Sources */,
 				A02AEA8F1C162BA10061006B /* RingSectorView.swift in Sources */,
 				A02AEA9A1C163CD00061006B /* UIColorExtensions.swift in Sources */,
+				A02AEAA51C1A40A80061006B /* Clock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

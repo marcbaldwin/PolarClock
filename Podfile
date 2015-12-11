@@ -9,6 +9,7 @@ target 'PolarClock' do
   pod "AsyncSwift"
   pod 'AutoLayoutBuilder'
   pod 'GestureRecognizerClosures'
+  pod "SwiftDate", "~> 2.0"
 end
 
 target 'PolarClockTests' do

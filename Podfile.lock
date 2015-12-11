@@ -3,17 +3,20 @@ PODS:
   - AutoLayoutBuilder (2.0.0)
   - GestureRecognizerClosures (2.0.0)
   - Nimble (3.0.0)
+  - SwiftDate (2.0.2)
 
 DEPENDENCIES:
   - AsyncSwift
   - AutoLayoutBuilder
   - GestureRecognizerClosures
   - Nimble (= 3.0.0)
+  - SwiftDate (~> 2.0)
 
 SPEC CHECKSUMS:
   AsyncSwift: 3c90beed237324f1b57e1f1c414dc5501985d208
   AutoLayoutBuilder: 804386e9c2615f244551a6839b8d0aa68ca46f62
   GestureRecognizerClosures: b4f906a027ad39fb46f8e31e167a51ddb79d8110
   Nimble: 4c353d43735b38b545cbb4cb91504588eb5de926
+  SwiftDate: b4f4d0962afe48365ad2800c9850a6626deb9359
 
 COCOAPODS: 0.39.0
