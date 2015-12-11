@@ -6,7 +6,7 @@ class ViewController: UIViewController {
 
     private struct Binding {
         let color: UIColor
-        let value: () -> Double
+        let value: () -> CGFloat
     }
 
     lazy var clock = Clock()
@@ -14,6 +14,7 @@ class ViewController: UIViewController {
     private lazy var bindings: [Binding] = self.createBindings()
 
     let duration: Double = 0.75
+    let delay: Double = 0.3
 
     override func loadView() {
         view = UIView()
@@ -38,7 +39,7 @@ class ViewController: UIViewController {
     }
 
     override func viewDidAppear(animated: Bool) {
-        doInitialAnimation()
+        animateInitialDisplay()
     }
 }
 
@@ -61,54 +62,56 @@ private extension ViewController {
         }
     }
 
-    func doInitialAnimation() {
-        bindings.enumerate().forEach { self.animateBinding($0.element, atIndex: $0.index) }
-        Async.main(after: duration * 0.3 * Double(sectorCount())) {
+    func animateInitialDisplay() {
+        bindings.enumerate().forEach { index, binding in
+            Async.main(after: duration * delay * Double(index)) {
+                let ringSectorView = self.polarClockView.ringAtIndex(index)
+                self.animateInitialDisplayOfBinding(binding, viewWith: ringSectorView)
+            }
+        }
+        Async.main(after: duration * delay * Double(sectorCount())) {
             self.tick()
         }
     }
 
-    func animateBinding(binding: Binding, atIndex index: Int) {
-        Async.main(after: duration * 0.3 * Double(index)) {
+    func animateInitialDisplayOfBinding(binding: Binding, viewWith view: RingSectorView) {
 
-            let ringSectorView = self.polarClockView.ringAtIndex(index)
-            let targetEndAngle = CGFloat(binding.value()) * 360
+        let targetEndAngle = binding.value() * 360
 
-            let endAngleAnimation = ringSectorView.animateEndAngle(targetEndAngle)
-            endAngleAnimation.duration = self.duration
-            endAngleAnimation.fillMode = kCAFillModeForwards
+        let endAngleAnimation = view.animateEndAngle(targetEndAngle)
+        endAngleAnimation.duration = duration
+        endAngleAnimation.fillMode = kCAFillModeForwards
 
-            let fadeInAnimation = CABasicAnimation(keyPath: "opacity")
-            fadeInAnimation.fromValue = 0
-            fadeInAnimation.toValue = 1
-            fadeInAnimation.duration = self.duration
-            fadeInAnimation.fillMode = kCAFillModeForwards
+        let fadeInAnimation = CABasicAnimation(keyPath: "opacity")
+        fadeInAnimation.fromValue = 0
+        fadeInAnimation.toValue = 1
+        fadeInAnimation.duration = duration
+        fadeInAnimation.fillMode = kCAFillModeForwards
 
-            let animationGroup = CAAnimationGroup()
-            animationGroup.animations = [endAngleAnimation, fadeInAnimation]
-            animationGroup.duration = self.duration
-            animationGroup.fillMode = kCAFillModeForwards
-            animationGroup.removedOnCompletion = false
+        let animationGroup = CAAnimationGroup()
+        animationGroup.animations = [endAngleAnimation, fadeInAnimation]
+        animationGroup.duration = duration
+        animationGroup.fillMode = kCAFillModeForwards
+        animationGroup.removedOnCompletion = false
 
-            CATransaction.begin()
-            CATransaction.setAnimationTimingFunction(CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut))
-            CATransaction.setCompletionBlock { () -> Void in
-                ringSectorView.endAngle = targetEndAngle
-                ringSectorView.layer.opacity = 1
-            }
-
-            ringSectorView.layer.addAnimation(animationGroup, forKey: "initialAnimation")
-            CATransaction.commit()
+        CATransaction.begin()
+        CATransaction.setAnimationTimingFunction(CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut))
+        CATransaction.setCompletionBlock { () -> Void in
+            view.endAngle = targetEndAngle
+            view.layer.opacity = 1
         }
+
+        view.layer.addAnimation(animationGroup, forKey: "initialAnimation")
+        CATransaction.commit()
     }
 
     func createBindings() -> [Binding] {
         return [
-            Binding(color: .softCyan(), value: { self.clock.yearProgress }),
-            Binding(color: .limeGreen(), value: { self.clock.monthProgress }),
-            Binding(color: .softMagneta(), value: { self.clock.dayProgress }),
-            Binding(color: .softRed(), value: { self.clock.hourProgress }),
-            Binding(color: .softYellowGreen(), value: { self.clock.minuteProgress }),
+            Binding(color: .softCyan(), value: { CGFloat(self.clock.yearProgress) }),
+            Binding(color: .limeGreen(), value: { CGFloat(self.clock.monthProgress) }),
+            Binding(color: .softMagneta(), value: { CGFloat(self.clock.dayProgress) }),
+            Binding(color: .softRed(), value: { CGFloat(self.clock.hourProgress) }),
+            Binding(color: .softYellowGreen(), value: { CGFloat(self.clock.minuteProgress) }),
         ]
     }
 }
