@@ -4,7 +4,7 @@ import Async
 
 class ViewController: UIViewController {
 
-    private struct Binding {
+    struct Binding {
         let index: Int
         let color: UIColor
         let duration: () -> Int
@@ -12,8 +12,8 @@ class ViewController: UIViewController {
     }
 
     lazy var clock = Clock()
-    lazy var polarClockView = PolarClockView()
-    private lazy var bindings: [Binding] = self.createBindings()
+    lazy var clockContainerView = ClockContainerView()
+    lazy var bindings: [Binding] = self.createBindings()
 
     let duration: Double = 0.75
     let delay: Double = 0.3
@@ -21,22 +21,16 @@ class ViewController: UIViewController {
     override func loadView() {
         view = UIView()
         view.backgroundColor = .background()
-        polarClockView.dataSource = self
-        polarClockView.initView()
-        polarClockView.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(polarClockView)
+        clockContainerView.polarClockView.dataSource = self
+        clockContainerView.initView()
+        clockContainerView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(clockContainerView)
 
         let layout = Layout()
-        layout += polarClockView[.Center] == view[.Center]
-        layout += polarClockView[.Width] <= view[.Width] - 40
-        layout += polarClockView[.Height] <= view[.Height] - 40
-        let widthConstraints = polarClockView[.Width] == view[.Width]
-        let heightConstraints = polarClockView[.Height] == view[.Height]
-        widthConstraints.forEach { $0.priority = 750 }
-        heightConstraints.forEach { $0.priority = 750 }
-        layout += widthConstraints
-        layout += heightConstraints
-        layout += polarClockView[.AspectRatio] == 1
+        layout += clockContainerView[.Left] == view[.Left] + 20
+        layout += clockContainerView[.Right] == view[.Right] - 20
+        layout += clockContainerView[.Top] == layoutGuides.top[.Bottom] + 20
+        layout += clockContainerView[.Bottom] == view[.Bottom] - 20
         layout.activateConstraints(true)
     }
 
@@ -67,7 +61,7 @@ private extension ViewController {
     }
 
     func animateInitialDisplayOfBinding(binding: Binding) {
-        let view = polarClockView.ringAtIndex(binding.index)
+        let view = clockContainerView.polarClockView.ringAtIndex(binding.index)
         let targetEndAngle = CGFloat(binding.value() * 360)
 
         let endAngleAnimation = view.animateEndAngleFrom(0, to: targetEndAngle)
