@@ -114,12 +114,12 @@ private extension ViewController {
 
     func createBindings() -> [Binding] {
         return [
-            Binding(index: 0, color: .softBlue(), duration: { 1.seconds() }, value: { self.clock.secondProgress }),
-            Binding(index: 1, color: .softCyan(), duration: { 60.seconds() }, value: { self.clock.minuteProgress }),
-            Binding(index: 2, color: .limeGreen(), duration: { 60.minutesToSeconds() }, value: { self.clock.hourProgress }),
-            Binding(index: 3, color: .softMagneta(), duration: { 24.hoursToSeconds() }, value: { self.clock.dayProgress }),
-            Binding(index: 4, color: .softRed(), duration: { self.clock.daysInMonth.daysToSeconds() }, value:  { self.clock.monthProgress }),
-            Binding(index: 5, color: .softYellowGreen(), duration: { self.clock.daysInYear.daysToSeconds() }, value: { self.clock.yearProgress }),
+            Binding(index: 0, color: .yellow(), duration: { 1.seconds() }, value: { self.clock.secondProgress }),
+            Binding(index: 1, color: .orange(), duration: { 60.seconds() }, value: { self.clock.minuteProgress }),
+            Binding(index: 2, color: .pink(), duration: { 60.minutesToSeconds() }, value: { self.clock.hourProgress }),
+            Binding(index: 3, color: .green(), duration: { 24.hoursToSeconds() }, value: { self.clock.dayProgress }),
+            Binding(index: 4, color: .blue(), duration: { self.clock.daysInMonth.daysToSeconds() }, value:  { self.clock.monthProgress }),
+            Binding(index: 5, color: .purple(), duration: { self.clock.daysInYear.daysToSeconds() }, value: { self.clock.yearProgress }),
         ]
     }
 }
