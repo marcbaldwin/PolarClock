@@ -26,6 +26,3 @@ extension UIColor {
         self.init(hue: h/360.0, saturation: s/100.0, brightness: b/100.0, alpha: 1)
     }
 }
-
-typealias ColorPair = (UIColor, UIColor)
-typealias StateColors = (normal: UIColor, highlight: UIColor)

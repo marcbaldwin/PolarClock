@@ -32,4 +32,8 @@ extension UIColor {
     class func softMagneta() -> UIColor {
         return UIColor(r:219, g: 109, b: 195)
     }
+
+    class func softBlue() -> UIColor {
+        return UIColor(r:109, g: 140, b: 219)
+    }
 }

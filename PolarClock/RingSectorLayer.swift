@@ -26,6 +26,8 @@ class RingSectorLayer: CALayer {
         fatalError("init(coder:) has not been implemented")
     }
 
+    // MARK: Override
+
     override func drawInContext(ctx: CGContext) {
         let outterRadius = bounds.width/2
         let innerRadius = outterRadius - depth

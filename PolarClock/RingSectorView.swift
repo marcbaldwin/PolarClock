@@ -17,6 +17,8 @@ class RingSectorView: UIView {
 
     private var segmentLayer: RingSectorLayer { return layer as! RingSectorLayer }
 
+    // MARK: Init
+
     convenience init(color: UIColor) {
         self.init(frame: CGRectZero)
         segmentLayer.color = color
@@ -33,14 +35,18 @@ class RingSectorView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
 
+    // MARK: Override
+
     override class func layerClass() -> AnyClass {
         return RingSectorLayer.self
     }
 
-    func animateEndAngle(endAngle: CGFloat) -> CAAnimation {
+    // MARK: Public
+
+    func animateEndAngleFrom(from: CGFloat, to: CGFloat) -> CAAnimation {
         let animation = CABasicAnimation(keyPath: "endAngle")
-        animation.fromValue = segmentLayer.endAngle
-        animation.toValue = endAngle
+        animation.fromValue = from
+        animation.toValue = to
         return animation
     }
 }
