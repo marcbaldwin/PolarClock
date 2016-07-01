@@ -1,6 +1,9 @@
 # Polar Clock
 A polar clock for iOS written in Swift.
 
+## Demo
+![demo](PolarClockDemo.gif)
+
 ## Description
 The rings represent the components of the current time.
 
@@ -16,9 +19,6 @@ Purple | Year
 ## Animation
 - When the clock is first displayed the rings fade in and expand to their initial positions
 - The rings animate to their positions as time progresses
-
-## Demo
-![demo](PolarClockDemo.gif)
 
 ## Dependencies
 
