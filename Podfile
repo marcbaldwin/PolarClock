@@ -1,21 +1,15 @@
-platform :ios, '8.0'
+platform :ios, '9.0'
 use_frameworks!
 
-def testing_pods
-    pod 'Nimble', '3.0.0'
-end
-
 target 'PolarClock' do
+
   pod "AsyncSwift"
   pod 'AutoLayoutBuilder'
-  pod 'GestureRecognizerClosures'
-  pod "SwiftDate", "~> 2.0"
-end
+  pod "SwiftDate"
 
-target 'PolarClockTests' do
-  testing_pods
-end
-
-target 'PolarClockUITests' do
+  target 'PolarClockTests' do
+    inherit! :search_paths
+    pod 'Nimble'
+  end
 
 end

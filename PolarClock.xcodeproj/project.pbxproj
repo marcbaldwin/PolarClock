@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7CBEE4F12E2904AD920E3C04 /* Pods_PolarClockTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1189328E92C4FE6726EBFEA9 /* Pods_PolarClockTests.framework */; };
+		11BFF2F3C7F0B5F80CBCF27C /* Pods_PolarClock.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 537CB9F6500C2FD017CB6742 /* Pods_PolarClock.framework */; };
 		A02AEA5C1C1628340061006B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02AEA5B1C1628340061006B /* AppDelegate.swift */; };
 		A02AEA5E1C1628340061006B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02AEA5D1C1628340061006B /* ViewController.swift */; };
 		A02AEA631C1628340061006B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A02AEA621C1628340061006B /* Assets.xcassets */; };
@@ -25,7 +25,7 @@
 		A02AEAA51C1A40A80061006B /* Clock.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02AEAA41C1A40A80061006B /* Clock.swift */; };
 		A02AEAA71C1B138C0061006B /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02AEAA61C1B138C0061006B /* DateExtensions.swift */; };
 		A091F2531C1F5ACB003281F3 /* ClockContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A091F2521C1F5ACB003281F3 /* ClockContainerView.swift */; };
-		CB1A005B960AABAE5CF38A3C /* Pods_PolarClock.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1932295BDB7CE7C49F6C3E1C /* Pods_PolarClock.framework */; };
+		C6C490CA3EBB4158B2C623D3 /* Pods_PolarClockTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF3062CF586CA2A2E61E9581 /* Pods_PolarClockTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,11 +46,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1189328E92C4FE6726EBFEA9 /* Pods_PolarClockTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PolarClockTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		1932295BDB7CE7C49F6C3E1C /* Pods_PolarClock.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PolarClock.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		3FDD5FFB5FA00A18B7CC8EF4 /* Pods-PolarClockTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PolarClockTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PolarClockTests/Pods-PolarClockTests.debug.xcconfig"; sourceTree = "<group>"; };
-		40ADF9A2BB5C72698CB875E1 /* Pods-PolarClockTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PolarClockTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PolarClockTests/Pods-PolarClockTests.release.xcconfig"; sourceTree = "<group>"; };
-		8B56773C0C8CBE8FF50CF6A5 /* Pods-PolarClock.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PolarClock.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PolarClock/Pods-PolarClock.debug.xcconfig"; sourceTree = "<group>"; };
+		537CB9F6500C2FD017CB6742 /* Pods_PolarClock.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PolarClock.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6C8B8DFBFE30C1FA89C4D5B7 /* Pods-PolarClock.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PolarClock.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PolarClock/Pods-PolarClock.debug.xcconfig"; sourceTree = "<group>"; };
+		7BC9370D00E6C76800A1CAC8 /* Pods-PolarClockTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PolarClockTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PolarClockTests/Pods-PolarClockTests.debug.xcconfig"; sourceTree = "<group>"; };
+		810BAB3834D0573EB71E1C38 /* Pods-PolarClockTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PolarClockTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PolarClockTests/Pods-PolarClockTests.release.xcconfig"; sourceTree = "<group>"; };
 		A02AEA581C1628340061006B /* PolarClock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PolarClock.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A02AEA5B1C1628340061006B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A02AEA5D1C1628340061006B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -74,7 +73,8 @@
 		A02AEAA41C1A40A80061006B /* Clock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Clock.swift; sourceTree = "<group>"; };
 		A02AEAA61C1B138C0061006B /* DateExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateExtensions.swift; sourceTree = "<group>"; };
 		A091F2521C1F5ACB003281F3 /* ClockContainerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClockContainerView.swift; sourceTree = "<group>"; };
-		C5D6CC4D56D10D522A1513C4 /* Pods-PolarClock.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PolarClock.release.xcconfig"; path = "Pods/Target Support Files/Pods-PolarClock/Pods-PolarClock.release.xcconfig"; sourceTree = "<group>"; };
+		E0A6713ADE7486D712E0799D /* Pods-PolarClock.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PolarClock.release.xcconfig"; path = "Pods/Target Support Files/Pods-PolarClock/Pods-PolarClock.release.xcconfig"; sourceTree = "<group>"; };
+		FF3062CF586CA2A2E61E9581 /* Pods_PolarClockTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PolarClockTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,7 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CB1A005B960AABAE5CF38A3C /* Pods_PolarClock.framework in Frameworks */,
+				11BFF2F3C7F0B5F80CBCF27C /* Pods_PolarClock.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -90,7 +90,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7CBEE4F12E2904AD920E3C04 /* Pods_PolarClockTests.framework in Frameworks */,
+				C6C490CA3EBB4158B2C623D3 /* Pods_PolarClockTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -104,11 +104,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		7BBBA1020F45820C8C6A9364 /* Frameworks */ = {
+		6DA5F235F5F4F12A974A8A89 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				1932295BDB7CE7C49F6C3E1C /* Pods_PolarClock.framework */,
-				1189328E92C4FE6726EBFEA9 /* Pods_PolarClockTests.framework */,
+				6C8B8DFBFE30C1FA89C4D5B7 /* Pods-PolarClock.debug.xcconfig */,
+				E0A6713ADE7486D712E0799D /* Pods-PolarClock.release.xcconfig */,
+				7BC9370D00E6C76800A1CAC8 /* Pods-PolarClockTests.debug.xcconfig */,
+				810BAB3834D0573EB71E1C38 /* Pods-PolarClockTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		9EC060E99673F410F998C7D3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				537CB9F6500C2FD017CB6742 /* Pods_PolarClock.framework */,
+				FF3062CF586CA2A2E61E9581 /* Pods_PolarClockTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -120,8 +131,8 @@
 				A02AEA6F1C1628340061006B /* PolarClockTests */,
 				A02AEA7A1C1628340061006B /* PolarClockUITests */,
 				A02AEA591C1628340061006B /* Products */,
-				D5DA5AF320532A120216EC81 /* Pods */,
-				7BBBA1020F45820C8C6A9364 /* Frameworks */,
+				6DA5F235F5F4F12A974A8A89 /* Pods */,
+				9EC060E99673F410F998C7D3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -232,17 +243,6 @@
 			name = View.Resources;
 			sourceTree = "<group>";
 		};
-		D5DA5AF320532A120216EC81 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				8B56773C0C8CBE8FF50CF6A5 /* Pods-PolarClock.debug.xcconfig */,
-				C5D6CC4D56D10D522A1513C4 /* Pods-PolarClock.release.xcconfig */,
-				3FDD5FFB5FA00A18B7CC8EF4 /* Pods-PolarClockTests.debug.xcconfig */,
-				40ADF9A2BB5C72698CB875E1 /* Pods-PolarClockTests.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -250,12 +250,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A02AEA801C1628340061006B /* Build configuration list for PBXNativeTarget "PolarClock" */;
 			buildPhases = (
-				D2DD3883F388240A732C4E61 /* Check Pods Manifest.lock */,
+				FA521B550CFFE1BE08688EFC /* [CP] Check Pods Manifest.lock */,
 				A02AEA541C1628340061006B /* Sources */,
 				A02AEA551C1628340061006B /* Frameworks */,
 				A02AEA561C1628340061006B /* Resources */,
-				8275B32423DCB9B747BD372D /* Embed Pods Frameworks */,
-				26CC026B59A28917A7000FF2 /* Copy Pods Resources */,
+				11AABB737A55B0E3C9E96A1B /* [CP] Embed Pods Frameworks */,
+				0DD8639BED0EA3DC6ACCDB6D /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -270,12 +270,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A02AEA831C1628340061006B /* Build configuration list for PBXNativeTarget "PolarClockTests" */;
 			buildPhases = (
-				23587E1F3481277AD6C9415E /* Check Pods Manifest.lock */,
+				134EA775F396728A7ACBC1A1 /* [CP] Check Pods Manifest.lock */,
 				A02AEA681C1628340061006B /* Sources */,
 				A02AEA691C1628340061006B /* Frameworks */,
 				A02AEA6A1C1628340061006B /* Resources */,
-				BAC94639102C1844930225FE /* Embed Pods Frameworks */,
-				8ED211C0B80EF5BFC91C9868 /* Copy Pods Resources */,
+				15BF7A9EEF7FC1E970E8DDD7 /* [CP] Embed Pods Frameworks */,
+				62465FDAE78A47C4E402F7FA /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -376,29 +376,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		23587E1F3481277AD6C9415E /* Check Pods Manifest.lock */ = {
+		0DD8639BED0EA3DC6ACCDB6D /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		26CC026B59A28917A7000FF2 /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -406,14 +391,14 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PolarClock/Pods-PolarClock-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		8275B32423DCB9B747BD372D /* Embed Pods Frameworks */ = {
+		11AABB737A55B0E3C9E96A1B /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -421,29 +406,29 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PolarClock/Pods-PolarClock-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		8ED211C0B80EF5BFC91C9868 /* Copy Pods Resources */ = {
+		134EA775F396728A7ACBC1A1 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PolarClockTests/Pods-PolarClockTests-resources.sh\"\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		BAC94639102C1844930225FE /* Embed Pods Frameworks */ = {
+		15BF7A9EEF7FC1E970E8DDD7 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -451,14 +436,29 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PolarClockTests/Pods-PolarClockTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		D2DD3883F388240A732C4E61 /* Check Pods Manifest.lock */ = {
+		62465FDAE78A47C4E402F7FA /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PolarClockTests/Pods-PolarClockTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FA521B550CFFE1BE08688EFC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -617,35 +617,37 @@
 		};
 		A02AEA811C1628340061006B /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8B56773C0C8CBE8FF50CF6A5 /* Pods-PolarClock.debug.xcconfig */;
+			baseConfigurationReference = 6C8B8DFBFE30C1FA89C4D5B7 /* Pods-PolarClock.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = PolarClock/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = xyz.marcb.PolarClock;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "edf2965e-eb4f-4f3e-a17a-974fabf75c64";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
 		A02AEA821C1628340061006B /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C5D6CC4D56D10D522A1513C4 /* Pods-PolarClock.release.xcconfig */;
+			baseConfigurationReference = E0A6713ADE7486D712E0799D /* Pods-PolarClock.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = PolarClock/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = xyz.marcb.PolarClock;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "edf2965e-eb4f-4f3e-a17a-974fabf75c64";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
 		A02AEA841C1628340061006B /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3FDD5FFB5FA00A18B7CC8EF4 /* Pods-PolarClockTests.debug.xcconfig */;
+			baseConfigurationReference = 7BC9370D00E6C76800A1CAC8 /* Pods-PolarClockTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = PolarClockTests/Info.plist;
@@ -658,7 +660,7 @@
 		};
 		A02AEA851C1628340061006B /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 40ADF9A2BB5C72698CB875E1 /* Pods-PolarClockTests.release.xcconfig */;
+			baseConfigurationReference = 810BAB3834D0573EB71E1C38 /* Pods-PolarClockTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = PolarClockTests/Info.plist;
